@@ -1,0 +1,16 @@
+<h2 ng-if="narrowItDown.found.length">Found List</h2>
+<table class="grid" ng-if="narrowItDown.found.length">
+  <tr>
+    <th>Name</th>
+    <th>Short Name</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="item in narrowItDown.found">
+      <td>{{item.name}}</td>
+      <td>{{item.short_name}}</td>
+      <td class="description">{{item.description}}</td>
+      <td><button class="btn btn-primary" ng-click="narrowItDown.removeItem({index:$index});">Don't want this one!</button></td>
+  </tr>
+</table>
+<div class="errorMessage" ng-if="narrowItDown.errorMessage"><h3>{{narrowItDown.errorMessage}}</h3></div>
